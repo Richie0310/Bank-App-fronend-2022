@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div>
+<h2>Register form</h2>
+</div>
+
+<div  class="col-5 mt-5">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="border p-5 mt-5 me-5" action="">
+        <div>
+            <input name="uname" formControlName="uname" id="floatingInput" class="form-control" placeholder="User Name / Email Id" type="login">
+            <label for="floatingInput"></label>
+        </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger mb-2">Invalid user name</div>
+
+                <div>
+            <input name="acno" formControlName="acno" id="floatingInput" class="form-control" placeholder="Account Number" type="login">
+            <label for="floatingInput"></label>
+        </div>
+        <!-- invalid acno -->
+        <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger mb-2">Invalid account number</div>
+        <div>
+            <input name="pswd" formControlName="pswd" id="floatingInput" class="form-control" placeholder="Password" type="login">
+            <label for="floatingInput"></label>
+        </div>
+        <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger mb-2">Invalid password</div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Register</button>
+            &nbsp;
+            <!-- <span>
+                New user? Click here to <a routerLink="/register">register</a>
+            </span> -->
+        </div>
+    </form>
+</div>

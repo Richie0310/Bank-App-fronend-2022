@@ -1,0 +1,16 @@
+<div *ngIf="item" class="container border text-center mt-5 p-5">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 border p-5">
+            <p>Are you sure you want to delete the account ?</p> 
+            <button (click)="deleteAcc()" class="btn btn-danger">Confirm</button>&nbsp;&nbsp;
+            <button (click)="cancel()" class="btn btn-success">No</button>&nbsp;&nbsp;
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+
+
+
+</div>
+
+<!-- string interpolation {{}}-->
